@@ -4,7 +4,6 @@ import { Router } from "./router";
 import { theme } from "./styles";
 import { useEffect } from "react";
 import { fetchUser } from "./redux/user";
-import { BrowserRouter } from "react-router-dom";
 
 function App() {
   // App이 마운트 되자마자 login 페이지 이동
@@ -16,11 +15,9 @@ function App() {
   }, [dispatch, user]);
 
   return (
-    <BrowserRouter basename="/instagram">
-      <ThemeProvider theme={theme}>
-        <Router />
-      </ThemeProvider>
-    </BrowserRouter>
+    <ThemeProvider theme={theme}>
+      <Router />
+    </ThemeProvider>
   );
 }
 
